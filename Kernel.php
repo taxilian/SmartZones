@@ -3,8 +3,9 @@
 namespace taxilian\SmartZones;
 
 abstract class Kernel {
-    protected $_services;
-    protected $_mode;
+    protected $_services = null;
+    protected $_request = null;
+    protected $_mode = "";
 
     public function __construct($mode = "production") {
         $this->_mode = $mode;
@@ -25,6 +26,17 @@ abstract class Kernel {
     abstract public function getZoneDirs();
 
     public function run() {
+    }
+
+    public function getRequest() {
+        if (empty($this->_request)) {
+            $this->_request = $this->createRequest();
+        }
+        return $this->_request;
+    }
+
+    protected function createRequest() {
+        return new Request();
     }
 };
 

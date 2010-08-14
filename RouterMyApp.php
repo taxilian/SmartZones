@@ -2,6 +2,14 @@
 
 namespace taxilian\SmartZones\example;
 
+use \taxilian\SmartZones\Kernel;
+
 class RouterMyApp extends \taxilian\SmartZones\ClassRouter {
-    protected $baseUrl = array("http" => array("localhost" => array("/~richard/test/index.php")));
+    protected $kernel;
+
+    public function __construct(Kernel $kernel) {
+        $this->kernel = $kernel;
+    }
+
+//    public function 
 }
