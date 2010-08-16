@@ -11,5 +11,8 @@ class RouterMyApp extends \taxilian\SmartZones\ClassRouter {
         $this->kernel = $kernel;
     }
 
-//    public function 
+    public function handleRequest() {
+        $searchstr = "/()/";
+
+    }
 }
